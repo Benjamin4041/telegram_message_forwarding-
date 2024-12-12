@@ -14,6 +14,9 @@ let client;
 async function handler(event) {
   let str = event.message.message;
   console.log(str);
+  if(str.includes('from benjamin')){
+    await client.sendMessage("me", { message: str });
+  }
   await client.sendMessage("-1002418113283", { message: str });
   
 }
@@ -55,7 +58,7 @@ function telegramMessage() {
       handler,
       new NewMessage({
         fromUsers: [7080143630n],
-        // chats: ["@kaganandhiscryptobestfriends"],
+        chats: ["@kaganandhiscryptobestfriends","-1002000016806"],
       })
     );
   })();
