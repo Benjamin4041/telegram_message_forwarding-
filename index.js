@@ -14,7 +14,7 @@ let client;
 async function handler(event) {
   let str = event.message.message;
   console.log(str);
-  await client.sendMessage("-2418113283", { message: str });
+  await client.sendMessage("-1002418113283", { message: str });
   
 }
 
@@ -54,8 +54,8 @@ function telegramMessage() {
     client.addEventHandler(
       handler,
       new NewMessage({
-        // fromUsers: [7080143630n],
-        chats: ["@kaganandhiscryptobestfriends"],
+        fromUsers: [7080143630n],
+        // chats: ["@kaganandhiscryptobestfriends"],
       })
     );
   })();
