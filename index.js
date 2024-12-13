@@ -3,8 +3,9 @@ const { StringSession } = require("telegram/sessions");
 const input = require("input");
 const { NewMessage, NewMessageEvent } = require("telegram/events");
 const fs = require("fs");
+const express = require('express')
 
-
+const app = express()
 require("dotenv").config();
 
 console.log("working...");
@@ -64,3 +65,12 @@ function telegramMessage() {
   })();
 }
 telegramMessage();
+
+
+app.get('/',(req,res)=>{
+return res.send('working')
+})
+
+app.listen(3000,()=>{
+  console.log('listening at port 3000')
+})
