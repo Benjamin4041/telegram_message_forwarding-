@@ -4,8 +4,6 @@ const input = require("input");
 const { NewMessage, NewMessageEvent } = require("telegram/events");
 const fs = require("fs");
 
-
-const app = express()
 require("dotenv").config();
 
 console.log("working...");
