@@ -1,8 +1,10 @@
+
 const { TelegramClient, Api } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 const input = require("input");
 const { NewMessage, NewMessageEvent } = require("telegram/events");
 const fs = require("fs");
+
 
 require("dotenv").config();
 
@@ -52,15 +54,17 @@ function telegramMessage() {
     }
     console.log(session);
     
+    client.addEventHandler(
+      handler,
+      new NewMessage({
+        chats: ["@kaganandhiscryptobestfriends","-1002000016806"],
+      }))
 
     client.addEventHandler(
       handler,
       new NewMessage({
-        fromUsers: [7080143630n],
-        chats: ["@kaganandhiscryptobestfriends","-1002000016806"],
-      })
-    );
+        fromUsers: [7080143630n,6871303843n],
+      }))
   })();
 }
 telegramMessage();
-
